@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice App</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+<body>
+    <div class="main">
+        <div class="container-1">
+           <div class="heading">
+             <h1 class="main-heading">Invoices</h1>
+             <p class="invoice-count">There are <span id="count-invoices">5</span> Invoices</p>
+          </div>
+          <div class="filter-box">
+            <div class="filter-label">
+                <span>Filter</span>
+                <div class="arrow-down">▼</div>
+            </div>
+            <div class="filter-card">
+                <div class="filter-option" data-value="all">All</div>
+                <div class="filter-option" data-value="paid">Paid</div>
+                <div class="filter-option" data-value="pending">Pending</div>
+                <div class="filter-option" data-value="draft">Draft</div>
+            </div>
+        </div>
+          <div class="invoice-gen">
+            <div class="oval-button">
+                <div class="plus-icon">+</div>
+                <div class="button-label">New Invoice</div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

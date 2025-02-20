@@ -1,0 +1,92 @@
+@import url("satoshi.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Satoshi-Medium;
+  background-color: #10100E;
+  color: #FFFFE3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.main .container-1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 7rem;
+  font-family: Satoshi-Bold;
+  font-size: 1.5rem;
+}
+.main .container-1 .filter-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 15rem;
+}
+.main .container-1 .filter-box .filter-label {
+  display: flex;
+  align-items: center;
+  background-color: #191815;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.main .container-1 .filter-box .filter-label span {
+  margin-right: 10px;
+}
+.main .container-1 .filter-box .filter-label .arrow-down {
+  font-size: 12px;
+}
+.main .container-1 .filter-box .filter-card {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  background-color: #191815;
+  border-radius: 8px;
+  width: 150px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.main .container-1 .filter-box .filter-card .filter-option {
+  padding: 12px 20px;
+  cursor: pointer;
+}
+.main .container-1 .filter-box .filter-card .filter-option:hover {
+  background-color: #2d2d2d;
+}
+.main .container-1 .filter-box .filter-card .filter-option:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.main .container-1 .filter-box .filter-card .filter-option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+.main .container-1 .filter-box.active .filter-card {
+  display: block;
+}
+.main .container-1 .oval-button {
+  display: flex;
+  align-items: center;
+  background-color: #191815;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.main .container-1 .oval-button .plus-icon {
+  margin-right: 10px;
+}/*# sourceMappingURL=index.css.map */
