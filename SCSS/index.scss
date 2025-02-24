@@ -103,6 +103,10 @@ body{
             &.active .filter-card {
                 display: block;
             }
+            .filter-option.active {
+                background-color: #4CAF50; // Green background for active filter
+                color: #fff; // White text for active filter
+            }
         }
         .oval-button{
         display: flex;
@@ -134,6 +138,21 @@ body{
             height: 100px;
             background-color: #191815;
             border-radius: 20px;
+            .card-status {
+                .status-dropdown {
+                    padding: 8px;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                    background-color: #191815;
+                    color: #FFFFE3;
+                    cursor: pointer;
+        
+                    &:focus {
+                        outline: none;
+                        border-color: #4CAF50;
+                    }
+                }
+            }
         }
         .card:hover{
             transform: scale(1.05);

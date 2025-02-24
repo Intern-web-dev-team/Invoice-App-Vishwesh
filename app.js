@@ -65,38 +65,70 @@ document.addEventListener('click', function(e) {
 });
 
 //create a card
-function createCard(data){const card = document.createElement('div');
-card.classList.add('card');
+function createCard(data) {
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-const cardNumber = document.createElement('p');
-cardNumber.classList.add('card-number');
-cardNumber.textContent = data['invoice-Id'];
-card.appendChild(cardNumber);
+    // Invoice ID
+    const cardNumber = document.createElement('p');
+    cardNumber.classList.add('card-number');
+    cardNumber.textContent = data['invoice-Id'];
+    card.appendChild(cardNumber);
 
-const cardDate = document.createElement('p');
-cardDate.classList.add('card-date');
-cardDate.textContent = data['invoice-date'];
-card.appendChild(cardDate);
+    // Invoice Date
+    const cardDate = document.createElement('p');
+    cardDate.classList.add('card-date');
+    cardDate.textContent = data['invoice-date'];
+    card.appendChild(cardDate);
 
-const cardName = document.createElement('p');
-cardName.classList.add('card-name');
-cardName.textContent = data['customer-name'];
-card.appendChild(cardName);
+    // Customer Name
+    const cardName = document.createElement('p');
+    cardName.classList.add('card-name');
+    cardName.textContent = data['customer-name'];
+    card.appendChild(cardName);
 
-const cardAmount = document.createElement('p'); 
-cardAmount.classList.add('card-amount');
-cardAmount.textContent = data['amount'];
-card.appendChild(cardAmount);
+    // Amount
+    const cardAmount = document.createElement('p');
+    cardAmount.classList.add('card-amount');
+    cardAmount.textContent = data['amount'];
+    card.appendChild(cardAmount);
 
-const cardStatus = document.createElement('p');
-cardStatus.classList.add('card-status');
-cardStatus.textContent = data['status'];
-card.appendChild(cardStatus);
+    // Payment Status (Dropdown)
+    const cardStatus = document.createElement('div');
+    cardStatus.classList.add('card-status');
 
-//append the card to the div called cards that is already in the html
-document.querySelector('.cards').appendChild(card);
-count++;
-document.querySelector('#count-invoices').innerHTML = count;
+    const statusDropdown = document.createElement('select');
+    statusDropdown.classList.add('status-dropdown');
+
+    const optionPaid = document.createElement('option');
+    optionPaid.value = 'Paid';
+    optionPaid.textContent = 'Paid';
+
+    const optionPending = document.createElement('option');
+    optionPending.value = 'Pending';
+    optionPending.textContent = 'Pending';
+
+    statusDropdown.appendChild(optionPaid);
+    statusDropdown.appendChild(optionPending);
+
+    // Set the initial status
+    statusDropdown.value = data['status'];
+
+    // Update the status when the dropdown changes
+    statusDropdown.addEventListener('change', () => {
+        const selectedStatus = statusDropdown.value;
+        console.log(`Status changed to: ${selectedStatus}`);
+    });
+
+    cardStatus.appendChild(statusDropdown);
+    card.appendChild(cardStatus);
+
+    // Append the card to the cards container
+    document.querySelector('.cards').appendChild(card);
+
+    // Update the invoice count
+    count++;
+    document.querySelector('#count-invoices').innerHTML = count;
 }
 
 //loop through json data and create cards for each item
@@ -132,4 +164,44 @@ document.querySelector('.form-elements').addEventListener('submit', function (e)
 
     // Reset the form (optional)
     document.querySelector('.form-elements').reset();
+});
+
+// Function to filter cards based on status
+function filterCards(status) {
+    const cards = document.querySelectorAll('.card'); // Get all cards
+
+    cards.forEach(card => {
+        const statusDropdown = card.querySelector('.status-dropdown'); // Get the status dropdown
+        const cardStatus = statusDropdown.value; // Get the selected status from the dropdown
+
+        if (status === 'all' || cardStatus.toLowerCase() === status.toLowerCase()) {
+            card.style.display = 'flex'; // Show the card
+        } else {
+            card.style.display = 'none'; // Hide the card
+        }
+    });
+}
+
+// Add event listeners to filter options
+document.querySelectorAll('.filter-option').forEach(option => {
+    option.addEventListener('click', function () {
+        const value = this.dataset.value; // Get the filter value (all, paid, pending)
+        document.querySelector('.filter-box').classList.remove('active'); // Close the filter dropdown
+        filterCards(value); // Filter the cards based on the selected value
+    });
+});
+
+document.querySelectorAll('.filter-option').forEach(option => {
+    option.addEventListener('click', function () {
+        const value = this.dataset.value;
+        document.querySelector('.filter-box').classList.remove('active');
+
+        // Remove active class from all options
+        document.querySelectorAll('.filter-option').forEach(opt => opt.classList.remove('active'));
+
+        // Add active class to the selected option
+        this.classList.add('active');
+
+        filterCards(value);
+    });
 });

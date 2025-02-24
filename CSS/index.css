@@ -80,6 +80,10 @@ body {
 .main .container-1 .filter-box.active .filter-card {
   display: block;
 }
+.main .container-1 .filter-box .filter-option.active {
+  background-color: #4CAF50;
+  color: #fff;
+}
 .main .container-1 .oval-button {
   display: flex;
   align-items: center;
@@ -109,6 +113,18 @@ body {
   height: 100px;
   background-color: #191815;
   border-radius: 20px;
+}
+.main .cards .card .card-status .status-dropdown {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #191815;
+  color: #FFFFE3;
+  cursor: pointer;
+}
+.main .cards .card .card-status .status-dropdown:focus {
+  outline: none;
+  border-color: #4CAF50;
 }
 .main .cards .card:hover {
   transform: scale(1.05);
