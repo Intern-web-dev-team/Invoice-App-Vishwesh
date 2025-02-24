@@ -29,6 +29,7 @@ body {
   align-items: center;
   flex-direction: row;
   margin-top: 7rem;
+  margin-bottom: 1rem;
   font-family: Satoshi-Bold;
   font-size: 1.5rem;
 }
@@ -89,4 +90,70 @@ body {
 }
 .main .container-1 .oval-button .plus-icon {
   margin-right: 10px;
+}
+.main .cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+}
+.main .cards .card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100px;
+  background-color: #191815;
+  border-radius: 20px;
+}
+.main .cards .card:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+  cursor: pointer;
+}
+.main .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.main .modal-container .modal {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #191815;
+  width: 500px;
+  height: 500px;
+  max-width: 500px;
+  border-radius: 20px;
+}
+.main .modal-container .modal .modal-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.main .modal-container .modal .modal-form .form-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.main .modal-container.show {
+  opacity: 1;
+  pointer-events: auto;
 }/*# sourceMappingURL=index.css.map */
