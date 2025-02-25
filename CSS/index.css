@@ -23,7 +23,6 @@ body {
   align-items: center;
   flex-direction: column;
 }
-
 .main .container-1 {
   width: 100%;
   display: flex;
@@ -35,29 +34,24 @@ body {
   font-family: Satoshi-Bold;
   font-size: 20px;
 }
-
 .main .container-1 .heading {
   display: flex;
   flex-direction: column;
 }
-
-.main .container-1 .main-heading {
+.main .container-1 .heading .main-heading {
   font-size: 32px;
   color: #4cc9f0;
 }
-
-.main .container-1 .invoice-count {
+.main .container-1 .heading .invoice-count {
   font-size: 16px;
   color: #f8f9fa;
 }
-
 .main .container-1 .filter-box {
   position: relative;
   display: flex;
   align-items: center;
   margin-left: 180px;
 }
-
 .main .container-1 .filter-box .filter-label {
   display: flex;
   align-items: center;
@@ -67,19 +61,15 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .main .container-1 .filter-box .filter-label:hover {
   background-color: #0f3460;
 }
-
 .main .container-1 .filter-box .filter-label span {
   margin-right: 10px;
 }
-
 .main .container-1 .filter-box .filter-label .arrow-down {
   font-size: 12px;
 }
-
 .main .container-1 .filter-box .filter-card {
   display: none;
   position: absolute;
@@ -92,34 +82,27 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
-
 .main .container-1 .filter-box .filter-card .filter-option {
   padding: 12px 20px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
 .main .container-1 .filter-box .filter-card .filter-option:hover {
   background-color: #0f3460;
 }
-
 .main .container-1 .filter-box .filter-card .filter-option:first-child {
   border-radius: 8px 8px 0 0;
 }
-
 .main .container-1 .filter-box .filter-card .filter-option:last-child {
   border-radius: 0 0 8px 8px;
 }
-
 .main .container-1 .filter-box.active .filter-card {
   display: block;
 }
-
 .main .container-1 .filter-box .filter-option.active {
   background-color: #4361ee;
   color: #fff;
 }
-
 .main .container-1 .oval-button {
   display: flex;
   align-items: center;
@@ -129,17 +112,14 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .main .container-1 .oval-button:hover {
   background-color: #3a56d4;
   transform: translateY(-2px);
 }
-
 .main .container-1 .oval-button .plus-icon {
   margin-right: 10px;
   font-weight: bold;
 }
-
 .main .cards {
   display: flex;
   justify-content: flex-start;
@@ -151,7 +131,6 @@ body {
   padding-bottom: 50px;
   overflow-y: auto;
 }
-
 .main .cards .card {
   display: flex;
   justify-content: space-around;
@@ -165,16 +144,13 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 0 15px;
 }
-
 .main .cards .card p {
   width: 20%;
   text-align: center;
 }
-
 .main .cards .card .card-status {
   position: relative;
 }
-
 .main .cards .card .card-status .status-dropdown {
   padding: 8px 12px;
   border-radius: 8px;
@@ -185,33 +161,27 @@ body {
   width: 120px;
   font-family: Satoshi-Medium;
 }
-
 .main .cards .card .card-status .status-dropdown:focus {
   outline: none;
   border-color: #4cc9f0;
 }
-
 .main .cards .card .card-status .status-dropdown option {
   padding: 8px;
 }
-
 .main .cards .card .card-status .status-dropdown[value=Paid],
 .main .cards .card .card-status .status-dropdown option[value=Paid] {
   background-color: #4ade80;
   color: #ffffff;
 }
-
 .main .cards .card .card-status .status-dropdown[value=Pending],
 .main .cards .card .card-status .status-dropdown option[value=Pending] {
   background-color: #ef4444;
   color: #ffffff;
 }
-
 .main .cards .card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 .main .modal-container {
   position: fixed;
   top: 0;
@@ -227,7 +197,6 @@ body {
   transition: all 0.3s ease;
   z-index: 1000;
 }
-
 .main .modal-container .modal {
   font-size: 24px;
   display: flex;
@@ -243,7 +212,6 @@ body {
   transform: translateY(-20px);
   transition: all 0.3s ease;
 }
-
 .main .modal-container .modal .modal-form {
   display: flex;
   justify-content: center;
@@ -252,13 +220,11 @@ body {
   gap: 20px;
   width: 100%;
 }
-
-.main .modal-container .modal .modal-heading {
+.main .modal-container .modal .modal-form .modal-heading {
   color: #4cc9f0;
   margin-bottom: 15px;
   text-align: center;
 }
-
 .main .modal-container .modal .modal-form .form-elements {
   display: flex;
   justify-content: center;
@@ -267,18 +233,15 @@ body {
   gap: 20px;
   width: 100%;
 }
-
 .main .modal-container .modal .modal-form .form-elements div {
   width: 100%;
 }
-
 .main .modal-container .modal .modal-form .form-elements label {
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
   color: #f8f9fa;
 }
-
 .main .modal-container .modal .modal-form .form-elements input,
 .main .modal-container .modal .modal-form .form-elements select {
   width: 100%;
@@ -290,14 +253,12 @@ body {
   font-family: Satoshi-Medium;
   font-size: 16px;
 }
-
 .main .modal-container .modal .modal-form .form-elements input:focus,
 .main .modal-container .modal .modal-form .form-elements select:focus {
   outline: none;
   border-color: #4cc9f0;
   box-shadow: 0 0 0 2px rgba(76, 201, 240, 0.25);
 }
-
 .main .modal-container .modal .modal-form .form-elements button {
   padding: 12px 24px;
   border-radius: 8px;
@@ -307,41 +268,33 @@ body {
   font-size: 16px;
   transition: all 0.3s ease;
 }
-
 .main .modal-container .modal .modal-form .form-elements button[type=submit] {
   background-color: #4361ee;
   color: #ffffff;
 }
-
 .main .modal-container .modal .modal-form .form-elements button[type=submit]:hover {
   background-color: #3a56d4;
 }
-
 .main .modal-container .modal .modal-form .form-elements button[type=close] {
   background-color: #ef4444;
   color: #ffffff;
 }
-
 .main .modal-container .modal .modal-form .form-elements button[type=close]:hover {
   background-color: #dc2626;
 }
-
-.main .modal-container .modal .modal-form .form-elements div:last-child {
+.main .modal-container .modal .modal-form .form-elements:last-child {
   display: flex;
   gap: 10px;
   justify-content: center;
 }
-
 .main .modal-container.show {
   opacity: 1;
   pointer-events: auto;
 }
-
 .main .modal-container.show .modal {
   transform: translateY(0);
 }
-
-.no-invoices-message {
+.main .no-invoices-message {
   text-align: center;
   margin-top: 40px;
   padding: 20px;
@@ -353,13 +306,11 @@ body {
   font-size: 18px;
   display: none;
 }
-
-.card-actions {
+.main .card-actions {
   display: flex;
   gap: 10px;
 }
-
-.card-actions button {
+.main .card-actions button {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
@@ -367,43 +318,34 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
 }
-
-.edit-btn {
+.main .card-actions button.edit-btn {
   background-color: #4361ee;
   color: white;
 }
-
-.edit-btn:hover {
+.main .card-actions button.edit-btn:hover {
   background-color: #3a56d4;
 }
-
-.delete-btn {
+.main .card-actions button.delete-btn {
   background-color: #ef4444;
   color: white;
 }
-
-.delete-btn:hover {
+.main .card-actions button.delete-btn:hover {
   background-color: #dc2626;
 }
-
-.currency-container {
+.main .currency-container {
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
 }
-
-.currency-container select {
+.main .currency-container select {
   width: 80px !important;
   margin-right: 10px;
 }
-
-.currency-container input {
+.main .currency-container input {
   flex: 1;
 }
-
-/* Flash message styles */
-.flash-message {
+.main .flash-message {
   position: fixed;
   top: 20px;
   left: 50%;
@@ -418,7 +360,6 @@ body {
   display: none;
   animation: fadeInOut 3s ease forwards;
 }
-
 @keyframes fadeInOut {
   0% {
     opacity: 0;
@@ -437,7 +378,7 @@ body {
     transform: translate(-50%, -20px);
   }
 }
-/* Responsive Design */
+
 @media screen and (max-width: 992px) {
   .main {
     width: 90%;
