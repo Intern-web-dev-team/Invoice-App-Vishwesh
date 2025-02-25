@@ -1,70 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice App</title>
     <link rel="stylesheet" href="./CSS/index.css">
 </head>
+
 <body>
     <div class="main">
         <div class="container-1">
-           <div class="heading">
-             <h1 class="main-heading">Invoices</h1>
-             <p class="invoice-count">There are <span id="count-invoices">5</span> Invoices</p>
-          </div>
-          <div class="filter-box">
-            <div class="filter-label">
-                <span>Filter</span>
-                <div class="arrow-down">▼</div>
+            <div class="heading">
+                <h1 class="main-heading">Invoices</h1>
+                <p class="invoice-count">There are <span id="count-invoices">0</span> Invoices</p>
             </div>
-            <div class="filter-card">
-                <div class="filter-option" data-value="all">All</div>
-                <div class="filter-option" data-value="paid">Paid</div>
-                <div class="filter-option" data-value="pending">Pending</div>
+            <div class="filter-box">
+                <div class="filter-label">
+                    <span>Filter</span>
+                    <div class="arrow-down">▼</div>
+                </div>
+                <div class="filter-card">
+                    <div class="filter-option active" data-value="all">All</div>
+                    <div class="filter-option" data-value="paid">Paid</div>
+                    <div class="filter-option" data-value="pending">Pending</div>
+                </div>
             </div>
-        </div>
-          <div class="invoice-gen">
-              <div class="oval-button" id="open-modal">
-                
-                  <div class="plus-icon">+</div>
-                  <div class="button-label">New Invoice</div>
-              </div>
-           </div>
-        </div>
-        <div class="modal-container" id="modal_container">
-            <div class="modal">
-                <div class="modal-form">
-                    <h2 class="modal-heading">Create New Invoice</h2>
-                  <form action="" class="form-elements">
-                    <div>
-                    <label for="invoice-id">Invoice ID</label>
-                    <input type="text" id="invoice-id" name="invoice-id" value="RT6969" required>
-                    </div>
-                    <div>
-                    <label for="invoice-date">Invoice Date</label>
-                    <input type="date" id="invoice-date" name="invoice-date" value="2021-08-19" required>
-                    </div>
-                    <div>
-                    <label for="customer-name">Customer Name</label>
-                    <input type="text" id="customer-name" name="customer-name" value="John Doe" required>
-                    </div>
-                    <div>
-                    <label for="amount">Amount</label>
-                    <input type="text" id="amount" name="amount" value="$900" required>
-                    </div>
-                    <div>
-                    <button type="submit">Submit</button>
-                    <button type="close" id="close-modal">Close</button>
-                    </div>
-                  </form>
+            <div class="invoice-gen">
+                <div class="oval-button" id="open-modal">
+                    <div class="plus-icon">+</div>
+                    <div class="button-label">New Invoice</div>
                 </div>
             </div>
         </div>
+
+        <!-- Create/Edit Invoice Modal -->
+        <div class="modal-container" id="modal_container">
+            <div class="modal">
+                <div class="modal-form">
+                    <h2 class="modal-heading" id="modal-title">Create New Invoice</h2>
+                    <form action="" class="form-elements" id="invoice-form">
+                        <div>
+                            <label for="invoice-id">Invoice ID</label>
+                            <input type="text" id="invoice-id" name="invoice-id" readonly>
+                        </div>
+                        <div>
+                            <label for="invoice-date">Invoice Date</label>
+                            <input type="date" id="invoice-date" name="invoice-date" required>
+                        </div>
+                        <div>
+                            <label for="customer-name">Customer Name</label>
+                            <input type="text" id="customer-name" name="customer-name" required>
+                        </div>
+                        <div>
+                            <label for="amount">Amount</label>
+                            <div class="currency-container">
+                                <select id="currency" name="currency" required>
+                                    <option value="">Currency</option>
+                                    <option value="$">USD ($)</option>
+                                    <option value="€">EUR (€)</option>
+                                    <option value="£">GBP (£)</option>
+                                    <option value="¥">JPY (¥)</option>
+                                    <option value="₹">INR (₹)</option>
+                                    <option value="₽">RUB (₽)</option>
+                                    <option value="¥">CNY (¥)</option>
+                                    <option value="$">CAD ($)</option>
+                                    <option value="$">AUD ($)</option>
+                                </select>
+                                <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+                            </div>
+                        </div>
+                        <!-- <div>
+                            <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="Paid">Paid</option>
+                                <option value="Pending">Pending</option>
+                            </select>
+                        </div> -->
+                        <div>
+                            <button type="submit" id="submit-btn">Submit</button>
+                            <button type="button" id="close-modal">Close</button>
+                            <button type="button" id="delete-btn" style="display: none;">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flash Message -->
+        <div class="flash-message" id="flash-message"></div>
+
+        <!-- No Invoices Message -->
+        <div class="no-invoices-message" id="no-invoices-message">
+            No invoices found for the selected filter.
+        </div>
+
+        <!-- Cards Container -->
         <div class="cards">
-   
+            <!-- Invoice cards will be dynamically generated here -->
         </div>
     </div>
     <script src="./app.js"></script>
 </body>
+
 </html>
