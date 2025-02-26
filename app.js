@@ -349,9 +349,9 @@ function showFlashMessage(message) {
     flashMessage.style.display = 'block';
     
     // Hide the message after 3 seconds
-    setTimeout(() => {
-        flashMessage.style.display = 'none';
-    }, 3000);
+    // setTimeout(() => {
+    //     flashMessage.style.display = 'none';
+    // }, 3000);
 }
 
 // Initialize the application

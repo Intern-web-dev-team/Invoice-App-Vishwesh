@@ -233,8 +233,8 @@ body {
       justify-content: center;
       align-items: center;
       background-color: #16213e;
-      width: 500px;
-      height: auto;
+      width: 100%;
+      height: -webkit-fill-available;;
       max-width: 90%;
       border-radius: 20px;
       padding: 30px;
